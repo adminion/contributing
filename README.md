@@ -5,7 +5,7 @@ All are encouraged to contribute by way of submitting new Issues and Pull-Reques
 
 # Release Strategy
 
-All development, including semver-majorb changes, should be done in the master branch.  Master therefore has an unstable API and is used for incubation of breaking changes and new features. 
+All development, including semver-major changes, should be done in the master branch.  Master therefore has an unstable API and is used for incubation of breaking changes and new features. 
 
 Immediately following a semver-major (i.e. v2.0.0) release,  a stable release branch for that major version (i.e. v2.x) should be cut from master. Semver-major and semver-patch commits from master should be cherry-picked into stable release branches where appropriate. Minor and patch releases should be made from their respective stable branches. (i.e. v2.x -> v2.0.1)
 
