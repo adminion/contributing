@@ -1,9 +1,14 @@
 
 # Adminion Contribution Guide
 
-All are encouraged to contribute by way of submitting new Issues and Pull-Requests to help improve the quality of the project.  Please see individual sections below regarding each type of contributions. 
+All are encouraged to contribute by way of submitting new Issues and Pull-Requests to help improve the quality of projects in the Adminion org.  Please see individual sections below regarding different types of contributions. 
 
-PRs with failing tests will not be merged; furthermore, PRs that decrease a project's test coverage will likely not be merged.  See [Testing and Coverage](#testing-and-coverage).
+# Release Strategy
+
+All development, including semver-majorb changes, should be done in the master branch.  Master therefore has an unstable API and is used for incubation of breaking changes and new features. 
+
+Immediately following a semver-major (i.e. v2.0.0) release,  a stable release branch for that major version (i.e. v2.x) should be cut from master. Semver-major and semver-patch commits from master should be cherry-picked into stable release branches where appropriate. Minor and patch releases should be made from their respective stable branches. (i.e. v2.x -> v2.0.1)
+
 
 ## Bugs
 If you believe you have found a bug, please create an issue describing the bug, code that reproduces it, and the version of the project you are using.  If possible, please provide a pull request to fix or suggest how the bug may be resolved.  
@@ -45,3 +50,7 @@ and generate a coverage report using:
     npm run coverage
 
 Test files are located in `tests/` and the coverage reports will be generated in `coverage/`.
+
+# Quality Control
+
+Tests help us find and prevent bugs.  They should be thorough, but not redundant.  **Please** always include tests with your new features and ensure you patches pass existing tests.  *PRs with failing tests will not be merged; furthermore, PRs that decrease a project's test coverage will likely not be merged.  See [Testing and Coverage](#testing-and-coverage).*
