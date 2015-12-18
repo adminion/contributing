@@ -5,10 +5,9 @@ All are encouraged to contribute by way of submitting new Issues and Pull-Reques
 
 # Release Strategy
 
-All development, including semver-major changes, should be done in the master branch.  Master therefore has an unstable API and is used for incubation of breaking changes and new features. 
+The master barnch is for the bleeding edge of development, the *next* version.  It is used for incubation of breaking changes and new features; therefore has an unstable API: features may be added or removed at any time and may be poorly documented (if at all).  Commits directly to master should be avoided in favor of using feature branches or bigfix branches and opening pull requests when the branches have matured.
 
-Immediately following a semver-major (i.e. v2.0.0) release,  a stable release branch for that major version (i.e. v2.x) should be cut from master. Semver-major and semver-patch commits from master should be cherry-picked into stable release branches where appropriate. Minor and patch releases should be made from their respective stable branches. (i.e. v2.x -> v2.0.1)
-
+Once the version on master has matured and the API has become stable, a stable release branch for that major version (v2.x) will be cut from master, the major version released from that branch (v2.x -> v2.0.0) and master will be updated to reflect work on the next semver-major verison (v3.x).  Backward-compatible commits from master are cherry-picked into stable release branches (v2.x, v1.x) where appropriate. Minor and patch releases are made from their respective stable branches. (v2.x -> v2.0.1...v2.x -> 2.1.0)
 
 ## Bugs
 If you believe you have found a bug, please create an issue describing the bug, code that reproduces it, and the version of the project you are using.  If possible, please provide a pull request to fix or suggest how the bug may be resolved.  
@@ -25,9 +24,8 @@ Breaking *semver-major* changes will only be considered if they dramatically imp
 
 1. Fork the project repo
 2. Create a new branch from `master`.  
-3. Implement your feature/bugfix in that branch and please provide [jsdoc](http://usejsdoc.org/) compatible API documentation for new features (don't forget to credit yourself with the @author tag!).
-4. Write/improve tests for your new feature/bugfix.
-5. Verify your feature/bugfix passes all of *your* tests as well as all *existing* tests.
+3. Implement your feature/bugfix in that branch (please provide [jsdoc](http://usejsdoc.org/) compatible API documentation for new features and don't forget to credit yourself with the @author tag!).
+5. Verify your feature/bugfix passes all of *your* tests as well as all *existing* tests or fix them if the tests are the issue.
 6. *Rebase* your branch on top of `adminion:master` to include others' changes.
 7. Again, verify your feature/bugfix *still* passes *all* tests after rebasing.
 8. Regenerate API Documentation and run a Coverage Report: `npm run docs && npm run coverage`.
